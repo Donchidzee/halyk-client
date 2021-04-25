@@ -144,7 +144,6 @@ export default {
 
 .questionnaire {
   width: 100%;
-  padding: 20px 3%;
   box-sizing: border-box;
 
   &-container {

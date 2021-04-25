@@ -5,6 +5,7 @@ import Login from "../views/login/halyk-login.vue";
 import AppLayout from "../views/layouts/halyk-app-layout.vue";
 import Questionnaire from "../views/questionnaire/halyk-questionnaire.vue";
 import Employees from "../views/employees/halyk-employees.vue";
+import Baners from "../views/baners/halyk-baners.vue";
 
 Vue.use(VueRouter);
 
@@ -32,6 +33,11 @@ const routes = [
         path: "employees",
         name: "employees",
         component: Employees,
+      },
+      {
+        path: "baners",
+        name: "baners",
+        component: Baners,
       },
     ],
   },

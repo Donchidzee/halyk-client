@@ -27,6 +27,8 @@ export default {
   &-content {
     margin-left: 300px;
     width: calc(100% - 300px);
+    padding: 20px 3%;
+    box-sizing: border-box;
   }
 }
 </style>

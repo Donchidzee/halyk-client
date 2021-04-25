@@ -98,7 +98,6 @@ export default {
 @import "@/assets/styles/variables.scss";
 
 .volunteers {
-  padding: 20px 3%;
   box-sizing: border-box;
   width: 100%;
 
