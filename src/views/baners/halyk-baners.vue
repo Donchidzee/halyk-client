@@ -6,7 +6,7 @@
         Банеры
         <span class="baners-title-span">4</span>
       </div>
-      <button class="baners-button">
+      <button class="baners-button" @click="addBaner">
         <span class="baners-button-text">Добавить</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -122,19 +122,59 @@
         </div>
       </div>
     </div>
+    <modal :isModalOpen="isModalOpen" @modal-closed="isModalOpen = false">
+      <div class="baners-title baners-title-dark">Добавление банера</div>
+      <a-upload-dragger
+        name="file"
+        :multiple="true"
+        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        @change="handleChange"
+        class="baners-input-upload"
+      >
+        <p class="ant-upload-drag-icon">
+          <a-icon type="inbox" />
+        </p>
+        <p class="ant-upload-text">Click or drag file to this area to upload</p>
+        <p class="ant-upload-hint">
+          Support for a single or bulk upload. Strictly prohibit from uploading
+          company data or other band files
+        </p>
+      </a-upload-dragger>
+    </modal>
   </div>
 </template>
 
 <script>
 import halykHeader from "@/components/common/halyk-header";
+import modal from "@/components/common/halyk-modal";
 
 export default {
   components: {
     halykHeader,
+    modal,
+  },
+  data() {
+    return {
+      isModalOpen: false,
+    };
   },
   methods: {
     onChange(e) {
       console.log(`checked = ${e.target.checked}`);
+    },
+    addBaner() {
+      this.isModalOpen = true;
+    },
+    handleChange(info) {
+      const status = info.file.status;
+      if (status !== "uploading") {
+        console.log(info.file, info.fileList);
+      }
+      if (status === "done") {
+        this.$message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === "error") {
+        this.$message.error(`${info.file.name} file upload failed.`);
+      }
     },
   },
 };
@@ -158,6 +198,11 @@ export default {
     &-span {
       font-size: 18px;
       opacity: 0.6;
+    }
+
+    &-dark {
+      color: #000000;
+      margin-bottom: 30px;
     }
   }
 
@@ -210,6 +255,12 @@ export default {
     &-delete {
       margin-left: 10px;
       cursor: pointer;
+    }
+  }
+
+  &-input {
+    &-upload {
+      height: 300px;
     }
   }
 }
