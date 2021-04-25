@@ -35,7 +35,7 @@
             />
           </div>
         </a-checkbox>
-        <div class="baners-button-delete">
+        <div class="baners-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -59,7 +59,7 @@
             />
           </div>
         </a-checkbox>
-        <div class="baners-button-delete">
+        <div class="baners-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -83,7 +83,7 @@
             />
           </div>
         </a-checkbox>
-        <div class="baners-button-delete">
+        <div class="baners-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -107,7 +107,7 @@
             />
           </div>
         </a-checkbox>
-        <div class="baners-button-delete">
+        <div class="baners-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -142,6 +142,20 @@
       </a-upload-dragger>
       <halykButton class="baners-button-submit" text="Добавить" />
     </modal>
+    <modal
+      :isModalOpen="isModalDeleteOpen"
+      @modal-closed="isModalDeleteOpen = false"
+    >
+      <div class="baners-title baners-title-dark">
+        Вы уверены что хотите удалить?
+      </div>
+      <halykButton class="baners-button-delete-submit" text="Да" />
+      <halykButton
+        class="baners-button-delete-submit"
+        type="unsolid"
+        text="Нет"
+      />
+    </modal>
   </div>
 </template>
 
@@ -159,6 +173,7 @@ export default {
   data() {
     return {
       isModalOpen: false,
+      isModalDeleteOpen: false,
     };
   },
   methods: {
@@ -178,6 +193,9 @@ export default {
       } else if (status === "error") {
         this.$message.error(`${info.file.name} file upload failed.`);
       }
+    },
+    deleteClicked() {
+      this.isModalDeleteOpen = true;
     },
   },
 };
@@ -230,6 +248,10 @@ export default {
     &-text {
       margin-right: 10px;
       margin-bottom: 2px;
+    }
+
+    &-delete-submit {
+      margin-top: 20px;
     }
   }
 

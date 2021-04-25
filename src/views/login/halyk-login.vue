@@ -54,6 +54,7 @@ export default {
     width: 300px;
     margin-top: 100px;
     margin-right: 20px;
+    text-align: center;
   }
 
   &-form {

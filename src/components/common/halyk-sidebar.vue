@@ -4,23 +4,6 @@
       <logo class="sidebar-logo" />
       <div class="dividing-line"></div>
       <div class="navigation-links">
-        <router-link class="link" to="/app/questionnaire">
-          <div class="link-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              style="fill: #3a7a58; transform: ; -ms-filter: "
-            >
-              <path
-                d="M19.903,8.586c-0.049-0.106-0.11-0.207-0.196-0.293l-6-6c-0.086-0.086-0.187-0.147-0.293-0.196 c-0.03-0.014-0.062-0.022-0.094-0.033c-0.084-0.028-0.17-0.046-0.259-0.051C13.04,2.011,13.021,2,13,2H6C4.897,2,4,2.897,4,4v16 c0,1.103,0.897,2,2,2h12c1.103,0,2-0.897,2-2V9c0-0.021-0.011-0.04-0.013-0.062c-0.005-0.089-0.022-0.175-0.051-0.259 C19.926,8.647,19.917,8.616,19.903,8.586z M16.586,8H14V5.414L16.586,8z M6,20V4h6v5c0,0.553,0.447,1,1,1h5l0.002,10H6z"
-              ></path>
-              <path d="M8 12H16V14H8zM8 16H16V18H8zM8 8H10V10H8z"></path>
-            </svg>
-          </div>
-          <span class="link-text">Анкеты</span>
-        </router-link>
         <router-link class="link link-active" to="/app/employees">
           <div class="link-icon">
             <svg
@@ -86,6 +69,28 @@
             </svg>
           </div>
           <span class="link-text">Новости</span>
+        </router-link>
+        <router-link class="link link-active" to="/app/vacancy">
+          <div class="link-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="fill: #3a7a58; transform: ; -ms-filter: "
+            >
+              <path
+                d="M9.715,12c1.151,0,2-0.849,2-2s-0.849-2-2-2s-2,0.849-2,2S8.563,12,9.715,12z"
+              ></path>
+              <path
+                d="M20,4H4C2.897,4,2,4.841,2,5.875v12.25C2,19.159,2.897,20,4,20h16c1.103,0,2-0.841,2-1.875V5.875C22,4.841,21.103,4,20,4z M20,18L4,17.989V6l16,0.011V18z"
+              ></path>
+              <path
+                d="M14 9H18V11H14zM15 13H18V15H15zM13.43 15.536c0-1.374-1.676-2.786-3.715-2.786S6 14.162 6 15.536V16h7.43V15.536z"
+              ></path>
+            </svg>
+          </div>
+          <span class="link-text">Вакансии</span>
         </router-link>
       </div>
     </div>

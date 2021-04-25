@@ -1,13 +1,13 @@
 <template>
-  <div class="news">
+  <div class="vacancy">
     <halykHeader />
-    <div class="news-container">
-      <div class="news-title">
-        Новости
-        <span class="news-title-span">4</span>
+    <div class="vacancy-container">
+      <div class="vacancy-title">
+        Вакансии
+        <span class="vacancy-title-span">4</span>
       </div>
-      <button class="news-button" @click="addBaner">
-        <span class="news-button-text">Добавить</span>
+      <button class="vacancy-button" @click="addBaner">
+        <span class="vacancy-button-text">Добавить</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -24,18 +24,11 @@
         </svg>
       </button>
     </div>
-    <div class="news-wrapper">
-      <div class="news-single">
-        <div class="news-image">
-          <img
-            class="news-image-inner"
-            src="@/assets/images/halyk-news-1.svg"
-            alt=""
-          />
-        </div>
-        <div class="news-text">
-          <div class="news-heading">Lorem ipsum dolor sit.</div>
-          <div class="news-content">
+    <div class="vacancy-wrapper">
+      <div class="vacancy-single">
+        <div class="vacancy-text">
+          <div class="vacancy-heading">Инженер-разработчик, 250000-300000</div>
+          <div class="vacancy-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
             quis laborum iste fugiat corporis sequi illum quam magnam non magni,
             nesciunt facere, quo culpa consectetur cumque exercitationem atque
@@ -44,7 +37,7 @@
             inventore pariatur harum quam tempore aperiam?
           </div>
         </div>
-        <div class="news-button-delete" @click="deleteClicked">
+        <div class="vacancy-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -58,17 +51,10 @@
           </svg>
         </div>
       </div>
-      <div class="news-single">
-        <div class="news-image">
-          <img
-            class="news-image-inner"
-            src="@/assets/images/halyk-news-2.svg"
-            alt=""
-          />
-        </div>
-        <div class="news-text">
-          <div class="news-heading">Lorem ipsum dolor sit.</div>
-          <div class="news-content">
+      <div class="vacancy-single">
+        <div class="vacancy-text">
+          <div class="vacancy-heading">Летчик, 150000-200000</div>
+          <div class="vacancy-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
             quis laborum iste fugiat corporis sequi illum quam magnam non magni,
             nesciunt facere, quo culpa consectetur cumque exercitationem atque
@@ -77,7 +63,7 @@
             inventore pariatur harum quam tempore aperiam?
           </div>
         </div>
-        <div class="news-button-delete" @click="deleteClicked">
+        <div class="vacancy-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -91,17 +77,10 @@
           </svg>
         </div>
       </div>
-      <div class="news-single">
-        <div class="news-image">
-          <img
-            class="news-image-inner"
-            src="@/assets/images/halyk-news-3.svg"
-            alt=""
-          />
-        </div>
-        <div class="news-text">
-          <div class="news-heading">Lorem ipsum dolor sit.</div>
-          <div class="news-content">
+      <div class="vacancy-single">
+        <div class="vacancy-text">
+          <div class="vacancy-heading">Менеджер, 120000-180000</div>
+          <div class="vacancy-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
             quis laborum iste fugiat corporis sequi illum quam magnam non magni,
             nesciunt facere, quo culpa consectetur cumque exercitationem atque
@@ -110,7 +89,7 @@
             inventore pariatur harum quam tempore aperiam?
           </div>
         </div>
-        <div class="news-button-delete" @click="deleteClicked">
+        <div class="vacancy-button-delete" @click="deleteClicked">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -126,13 +105,13 @@
       </div>
     </div>
     <modal :isModalOpen="isModalOpen" @modal-closed="isModalOpen = false">
-      <div class="news-title news-title-dark">Добавление новости</div>
+      <div class="vacancy-title vacancy-title-dark">Добавление новости</div>
       <a-upload-dragger
         name="file"
         :multiple="true"
         action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         @change="handleChange"
-        class="news-input-upload"
+        class="vacancy-input-upload"
       >
         <p class="ant-upload-drag-icon">
           <a-icon type="inbox" />
@@ -144,7 +123,7 @@
         </p>
       </a-upload-dragger>
       <halykInput
-        class="news-input"
+        class="vacancy-input"
         title="Заголовок"
         placeholder="Введите заголовок"
       />
@@ -152,18 +131,18 @@
         <div class="title">Содержание</div>
         <textarea type="text" class="input" placeholder="Введите заголовок" />
       </div>
-      <halykButton class="news-button-submit" text="Добавить" />
+      <halykButton class="vacancy-button-submit" text="Добавить" />
     </modal>
     <modal
       :isModalOpen="isModalDeleteOpen"
       @modal-closed="isModalDeleteOpen = false"
     >
-      <div class="news-title news-title-dark">
+      <div class="vacancy-title vacancy-title-dark">
         Вы уверены что хотите удалить?
       </div>
-      <halykButton class="news-button-delete-submit" text="Да" />
+      <halykButton class="vacancy-button-delete-submit" text="Да" />
       <halykButton
-        class="news-button-delete-submit"
+        class="vacancy-button-delete-submit"
         type="unsolid"
         text="Нет"
       />
@@ -218,7 +197,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/styles/variables.scss";
 
-.news {
+.vacancy {
   &-container {
     margin-top: 15px;
     display: flex;
@@ -287,18 +266,8 @@ export default {
     border-radius: 7px;
   }
 
-  &-image {
-    height: 150px;
-    width: 25%;
-
-    &-inner {
-      height: 100%;
-      border-radius: 7px;
-    }
-  }
-
   &-text {
-    width: 70%;
+    width: 95%;
   }
 
   &-heading {

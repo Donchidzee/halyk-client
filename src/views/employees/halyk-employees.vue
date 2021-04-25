@@ -1,13 +1,13 @@
 <template>
-  <div class="volunteers">
+  <div class="empoyees">
     <halykHeader />
-    <div class="volunteers-container">
-      <div class="volunteers-title">
-        Волонтеры
-        <span class="volunteers-title-span">{{ volunteerss.length }}</span>
+    <div class="empoyees-container">
+      <div class="empoyees-title">
+        Сотрудники
+        <span class="empoyees-title-span">{{ empoyeess.length }}</span>
       </div>
-      <button class="volunteers-button">
-        <span class="volunteers-button-text">Добавить</span>
+      <button class="empoyees-button">
+        <span class="empoyees-button-text">Добавить</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -24,23 +24,23 @@
         </svg>
       </button>
     </div>
-    <table class="volunteers-table" cellspacing="0">
-      <tr class="volunteers-row">
-        <th class="volunteers-cell volunteers-head">№</th>
-        <th class="volunteers-cell volunteers-head">ФИ волонтера</th>
-        <th class="volunteers-cell volunteers-head">Номер волонтера</th>
-        <th class="volunteers-cell volunteers-head">Удалить</th>
+    <table class="empoyees-table" cellspacing="0">
+      <tr class="empoyees-row">
+        <th class="empoyees-cell empoyees-head">№</th>
+        <th class="empoyees-cell empoyees-head">ФИ сотрудника</th>
+        <th class="empoyees-cell empoyees-head">Номер сотрудника</th>
+        <th class="empoyees-cell empoyees-head">Удалить</th>
       </tr>
       <tr
-        class="volunteers-data"
-        v-for="(volunteers, index) in volunteerss"
-        :key="volunteers.id"
+        class="empoyees-data"
+        v-for="(empoyees, index) in empoyeess"
+        :key="empoyees.id"
       >
-        <td class="volunteers-cell">{{ index + 1 }}</td>
-        <td class="volunteers-cell">{{ volunteers.voluteerName }}</td>
-        <td class="volunteers-cell">{{ volunteers.respondentNumber }}</td>
-        <td class="volunteers-cell">
-          <button class="volunteers-button-delete">
+        <td class="empoyees-cell">{{ index + 1 }}</td>
+        <td class="empoyees-cell">{{ empoyees.voluteerName }}</td>
+        <td class="empoyees-cell">{{ empoyees.respondentNumber }}</td>
+        <td class="empoyees-cell">
+          <button class="empoyees-button-delete" @click="deleteClicked">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -56,19 +56,31 @@
         </td>
       </tr>
     </table>
+    <modal :isModalOpen="isModalOpen" @modal-closed="isModalOpen = false">
+      <div class="empoyees-title empoyees-title-dark">
+        Вы уверены что хотите удалить?
+      </div>
+      <halykButton class="empoyees-button-submit" text="Да" />
+      <halykButton class="empoyees-button-submit" type="unsolid" text="Нет" />
+    </modal>
   </div>
 </template>
 
 <script>
 import halykHeader from "@/components/common/halyk-header";
+import modal from "@/components/common/halyk-modal";
+import halykButton from "@/components/common/halyk-button";
 
 export default {
   components: {
     halykHeader,
+    modal,
+    halykButton,
   },
   data() {
     return {
-      volunteerss: [
+      isModalOpen: false,
+      empoyeess: [
         {
           id: 0,
           voluteerName: "Almaz",
@@ -91,13 +103,18 @@ export default {
       searchOptions: ["Алмаз", "Айдар", "Айбек"],
     };
   },
+  methods: {
+    deleteClicked() {
+      this.isModalOpen = true;
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/styles/variables.scss";
 
-.volunteers {
+.empoyees {
   box-sizing: border-box;
   width: 100%;
 
@@ -166,6 +183,10 @@ export default {
 
     &-delete:hover {
       opacity: 0.8;
+    }
+
+    &-submit {
+      margin-top: 20px;
     }
   }
 
