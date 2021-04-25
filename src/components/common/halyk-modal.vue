@@ -68,7 +68,7 @@ export default {
 }
 
 .content {
-  padding: 100px 0;
+  padding: 40px 0;
   margin: auto;
   width: 750px;
   height: auto;

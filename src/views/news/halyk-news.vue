@@ -1,13 +1,13 @@
 <template>
-  <div class="baners">
+  <div class="news">
     <halykHeader />
-    <div class="baners-container">
-      <div class="baners-title">
-        Банеры
-        <span class="baners-title-span">4</span>
+    <div class="news-container">
+      <div class="news-title">
+        Новости
+        <span class="news-title-span">4</span>
       </div>
-      <button class="baners-button" @click="addBaner">
-        <span class="baners-button-text">Добавить</span>
+      <button class="news-button" @click="addBaner">
+        <span class="news-button-text">Добавить</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -24,18 +24,27 @@
         </svg>
       </button>
     </div>
-    <div class="baners-wrapper">
-      <div class="baners-baner">
-        <a-checkbox @change="onChange">
-          <div class="baners-baner-inner">
-            <img
-              class="baners-baner-image"
-              src="@/assets/images/halyk-baner-1.svg"
-              alt=""
-            />
+    <div class="news-wrapper">
+      <div class="news-single">
+        <div class="news-image">
+          <img
+            class="news-image-inner"
+            src="@/assets/images/halyk-news-1.svg"
+            alt=""
+          />
+        </div>
+        <div class="news-text">
+          <div class="news-heading">Lorem ipsum dolor sit.</div>
+          <div class="news-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
+            quis laborum iste fugiat corporis sequi illum quam magnam non magni,
+            nesciunt facere, quo culpa consectetur cumque exercitationem atque
+            voluptatem! Sit, quisquam libero nisi repellat temporibus facere
+            doloremque a? Expedita dolorem minus nobis accusantium illo
+            inventore pariatur harum quam tempore aperiam?
           </div>
-        </a-checkbox>
-        <div class="baners-button-delete">
+        </div>
+        <div class="news-button-delete">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -49,17 +58,26 @@
           </svg>
         </div>
       </div>
-      <div class="baners-baner">
-        <a-checkbox @change="onChange">
-          <div class="baners-baner-inner">
-            <img
-              class="baners-baner-image"
-              src="@/assets/images/halyk-baner-2.svg"
-              alt=""
-            />
+      <div class="news-single">
+        <div class="news-image">
+          <img
+            class="news-image-inner"
+            src="@/assets/images/halyk-news-2.svg"
+            alt=""
+          />
+        </div>
+        <div class="news-text">
+          <div class="news-heading">Lorem ipsum dolor sit.</div>
+          <div class="news-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
+            quis laborum iste fugiat corporis sequi illum quam magnam non magni,
+            nesciunt facere, quo culpa consectetur cumque exercitationem atque
+            voluptatem! Sit, quisquam libero nisi repellat temporibus facere
+            doloremque a? Expedita dolorem minus nobis accusantium illo
+            inventore pariatur harum quam tempore aperiam?
           </div>
-        </a-checkbox>
-        <div class="baners-button-delete">
+        </div>
+        <div class="news-button-delete">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -73,41 +91,26 @@
           </svg>
         </div>
       </div>
-      <div class="baners-baner">
-        <a-checkbox @change="onChange">
-          <div class="baners-baner-inner">
-            <img
-              class="baners-baner-image"
-              src="@/assets/images/halyk-baner-3.svg"
-              alt=""
-            />
-          </div>
-        </a-checkbox>
-        <div class="baners-button-delete">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            style="fill: #e74c3c; transform: ; -ms-filter: "
-          >
-            <path
-              d="M15,2H9C7.897,2,7,2.897,7,4v2H3v2h2v12c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-4V4C17,2.897,16.103,2,15,2z M9,4h6v2H9V4z M17,20H7V8h1h8h1V20z"
-            ></path>
-          </svg>
+      <div class="news-single">
+        <div class="news-image">
+          <img
+            class="news-image-inner"
+            src="@/assets/images/halyk-news-3.svg"
+            alt=""
+          />
         </div>
-      </div>
-      <div class="baners-baner">
-        <a-checkbox @change="onChange">
-          <div class="baners-baner-inner">
-            <img
-              class="baners-baner-image"
-              src="@/assets/images/halyk-baner-4.svg"
-              alt=""
-            />
+        <div class="news-text">
+          <div class="news-heading">Lorem ipsum dolor sit.</div>
+          <div class="news-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
+            quis laborum iste fugiat corporis sequi illum quam magnam non magni,
+            nesciunt facere, quo culpa consectetur cumque exercitationem atque
+            voluptatem! Sit, quisquam libero nisi repellat temporibus facere
+            doloremque a? Expedita dolorem minus nobis accusantium illo
+            inventore pariatur harum quam tempore aperiam?
           </div>
-        </a-checkbox>
-        <div class="baners-button-delete">
+        </div>
+        <div class="news-button-delete">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -123,13 +126,13 @@
       </div>
     </div>
     <modal :isModalOpen="isModalOpen" @modal-closed="isModalOpen = false">
-      <div class="baners-title baners-title-dark">Добавление банера</div>
+      <div class="news-title news-title-dark">Добавление новости</div>
       <a-upload-dragger
         name="file"
         :multiple="true"
         action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         @change="handleChange"
-        class="baners-input-upload"
+        class="news-input-upload"
       >
         <p class="ant-upload-drag-icon">
           <a-icon type="inbox" />
@@ -140,7 +143,16 @@
           company data or other band files
         </p>
       </a-upload-dragger>
-      <halykButton class="baners-button-submit" text="Добавить" />
+      <halykInput
+        class="news-input"
+        title="Заголовок"
+        placeholder="Введите заголовок"
+      />
+      <div class="input-container">
+        <div class="title">Содержание</div>
+        <textarea type="text" class="input" placeholder="Введите заголовок" />
+      </div>
+      <halykButton class="news-button-submit" text="Добавить" />
     </modal>
   </div>
 </template>
@@ -148,12 +160,14 @@
 <script>
 import halykHeader from "@/components/common/halyk-header";
 import modal from "@/components/common/halyk-modal";
+import halykInput from "@/components/common/halyk-input";
 import halykButton from "@/components/common/halyk-button";
 
 export default {
   components: {
     halykHeader,
     modal,
+    halykInput,
     halykButton,
   },
   data() {
@@ -186,7 +200,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/styles/variables.scss";
 
-.baners {
+.news {
   &-container {
     margin-top: 15px;
     display: flex;
@@ -223,13 +237,13 @@ export default {
     transition: 200ms ease-in-out;
     outline: none;
 
-    &-submit {
-      margin-top: 30px;
-    }
-
     &-text {
       margin-right: 10px;
       margin-bottom: 2px;
+    }
+
+    &-submit {
+      margin-top: 10px;
     }
   }
 
@@ -241,21 +255,37 @@ export default {
     margin-top: 30px;
   }
 
-  &-baner {
-    margin-bottom: 20px;
+  &-single {
     width: 100%;
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    border: 1px solid #939393;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+  }
+
+  &-image {
+    height: 150px;
+    width: 25%;
 
     &-inner {
-      width: 100%;
-      border-radius: 10px;
+      height: 100%;
+      border-radius: 7px;
     }
+  }
 
-    &-image {
-      width: 100%;
-      border-radius: 10px;
-    }
+  &-text {
+    width: 70%;
+  }
+
+  &-heading {
+    color: #000000;
+    font-size: 26px;
+  }
+
+  &-content {
+    margin-top: 15px;
   }
 
   &-button {
@@ -266,9 +296,42 @@ export default {
   }
 
   &-input {
-    &-upload {
-      height: 300px;
-    }
+    margin-top: 20px;
+  }
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.title {
+  margin-bottom: 5px;
+  color: #41a8fb;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.input {
+  padding: 10px 15px;
+  height: 150px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: $dark;
+  font-size: 15px;
+  border: 1px solid #41a8fb;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.7;
+  transition: 200ms ease-in-out;
+
+  &:focus {
+    padding-left: 18px;
+    opacity: 0.9;
   }
 }
 </style>

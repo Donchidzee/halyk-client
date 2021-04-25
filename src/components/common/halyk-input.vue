@@ -67,7 +67,7 @@ export default {
 
 .title {
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #41a8fb;
   font-size: 15px;
   opacity: 0.9;
 }
@@ -81,7 +81,7 @@ export default {
   align-items: center;
   color: $dark;
   font-size: 15px;
-  border: 1px solid #ffffff;
+  border: 1px solid #41a8fb;
   border-radius: 10px;
   outline: none;
   opacity: 0.7;
