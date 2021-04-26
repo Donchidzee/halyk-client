@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import main from "@/views/main/halyk-main.vue";
+import mainLayout from "@/views/layouts/main.vue";
 
 Vue.use(VueRouter);
 
@@ -8,7 +8,7 @@ const routes = [
   {
     path: "/",
     name: "main",
-    component: main,
+    component: mainLayout,
   },
 ];
 
