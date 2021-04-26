@@ -23,5 +23,6 @@ export default {};
 
 #app {
   font-family: San-Francisco;
+  box-sizing: border-box;
 }
 </style>

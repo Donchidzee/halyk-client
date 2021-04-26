@@ -29,7 +29,7 @@ export default {};
   border-bottom: 1px solid #ccc;
 
   &__logo {
-    width: 100px;
+    margin: 0 30px;
     height: 60%;
   }
 
