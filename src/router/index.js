@@ -7,6 +7,7 @@ import Employees from "../views/employees/halyk-employees.vue";
 import Baners from "../views/baners/halyk-baners.vue";
 import News from "../views/news/halyk-news.vue";
 import Vacancy from "../views/vacancy/halyk-vacancy.vue";
+import Profile from "../views/profile/halyk-profile.vue";
 
 Vue.use(VueRouter);
 
@@ -44,6 +45,11 @@ const routes = [
         path: "vacancy",
         name: "vacancy",
         component: Vacancy,
+      },
+      {
+        path: "profile",
+        name: "profile",
+        component: Profile,
       },
     ],
   },
